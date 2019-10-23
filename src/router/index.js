@@ -5,7 +5,7 @@ import Home from '../components/HomePage/Home.vue'
 Vue.use(Router)
 let routes = [
   {
-    path: '/abc',
+    path: '/home',
     name: 'Home',
     component: Home,
   },

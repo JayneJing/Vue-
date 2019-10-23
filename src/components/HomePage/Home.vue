@@ -1,12 +1,28 @@
 <template>
-	<div>{{text}}</div>
+	<div>{{TopNavTitle}}</div>
 </template>
 <script>
+  import {mapState} from 'vuex'
   export default {
+    name: "home",
     data() {
       return {
-        text: '250'
       }
+    },
+    created(){
+      this.getTopNavTitle()
+    },
+    mounted(){
+    },
+    computed: {
+      ...mapState({
+        TopNavTitle: state => state.HomePage.TopNavTitle,
+      })
+    },
+    methods: {
+      getTopNavTitle() {
+        this.$store.dispatch('getTopNavTitle')
+      },
     }
   }
 </script>
